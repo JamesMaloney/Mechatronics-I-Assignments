@@ -1,0 +1,22 @@
+7. Fill out the minimum and maximum values for these data types:
+
+Type	Minimum					Maximum
+
+u8	0						255
+u32	0						4294967295
+f32	-340282346638528859811704183484516925440.0	340282346638528859811704183484516925440.0
+i16	-32768						32767
+
+
+8. What is integer overflow?
+
+Integer overflow happens when the value that is given to an integer of a certain type is out of bounds for that type's dimension.
+An example would be assigning the value 256 to a u8 data type, which can only go from 0 to 255 (as already stated before).
+
+
+9. What happens in Rust if an integer overflows?
+
+Rust has a particular way of dealing with integer overflows, which is different if code is compiled in debug or in release mode.
+In debug mode, compiler looks for integer overflows while checking code: if one or more are found, compiler exits with an error (which in Rust is usually called a "panic").
+In release mode, compiler doesn't look for integer overflows, so if they are present Rust takes the overflowing value and performs two's complement wrapping in order to let it fit in the "smaller" type.
+This means that, if dealing with u8 data type (which, again, holds integer from 0 to 255), 256 becomes 0, 257 becomes 1, and so on (as it would happen with the modulo operator).

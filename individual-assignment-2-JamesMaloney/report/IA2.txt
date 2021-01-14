@@ -1,0 +1,61 @@
+1. Attend the Lab Safety Class at 207, complete the soldering task there.
+
+View attached image.
+
+
+2. Solder pins to your Raspberry Pi Zero W.
+
+View attached image.
+
+
+3. What are the two main configurations for GPIO pins?
+
+The GPIO pins, as the name suggests, are General-Purpose Input/Output pins, which means that they can be used for either digital input or digital output, depending on how we configure them to behave using software.
+If one pin is configured for output, it can be set to high (3V3) or low (0V), while if it's configured for input, it can be read as high (3V3) or low (0V).
+Combining more than one pin we can also implements some other functions, like PWM and SPI.
+
+
+4. What other pins does the Raspberry Pi Zero W have and what do they do?
+
+Raspberry Pi Zero W has 5 types of pins (sample image attached):
+- 3.3V pins (number 1, 17) erogate 3.3V tension and can be used to power circuits;
+- 5V pins (number 2, 4) erogate 5V tension and can also be used to power circuits;
+- Ground pins (number 6, 9, 14, 20, 25, 30, 34, 39) are 0V pins (hence the name, the ground has usually no voltage) which are used to avoid getting shocked while interacting with circuits, since a mistake or a malfunction in the circuit itself can raise voltage to very high levels;
+- ID EEPROM pins (number 27, 28) are theoretically GPIO pins but should be only used to activate the EEPROM functionality (EEPROM stands for Electrically Erasable Programmable Read-Only Memory, and the Raspberry Pi one is used to keep GPIO configuration and a device tree fragment which linux uses to recognise external hardware);
+- GPIO pins, as explained above, represent digital input and output pins, and can be used to achieve more specific functions.
+
+These functions are:
+- PWM (Pulse-width Modulation, reduces the average power by dividing it into descreet parts), can be done via software on all GPIO pins, via hardware on GPIO12, GPIO13, GPIO18, GPIO19;
+- SPI (Serial Peripheral Interface, is a serial communication protocol), can be achieved in two ways:
+    - SPI0: MOSI on GPIO10, MISO on GPIO9, SCLK on GPIO11, CE0 on GPIO8, CE1 on GPIO7;
+    - SPI1: MOSI on GPIO20, MISO on GPIO19, SCLK on GPIO21, CE0 on GPIO18, CE1 on GPIO17, CE2 on GPIO16.
+-I2C (Inter Integrated Circuit, another serial communication protocol), can again be achieved in two ways:
+    - Data on GPIO2, Clock on GPIO3;
+    - EEPROM Data on GPIO0, EEPROM Clock on GPIO1.
+- Serial, obtained by just connecting TX on GPIO14 and RX on GPIO15.
+
+
+5. What are Enums and why are they useful?
+
+Enumerations, or enums, represent a data structure which allows to define a type by listing all its possible elements: for example, the type "FilmGenre" could contain "Anime", "Comedy", "Drama", "Horror", "Sci-fi", "Thriller", etc...
+When we subsequently create a new film, we can match it to these elements we declared before.
+The enums are useful for multiple reasons:
+- they allow us to define elements without worrying about the actual data content we will have to manage, just about the data kind (worry about film genre, not film itself);
+- each enum element could have different properties (i.e. associated data) if compared to the others ("Anime" films element could store a variable which contains info about the graphic engine used to animate them, which is not applicable to other film genres);
+- the "Option" enum is used to match a value to either something or nothing (null), which is really useful since the compiler can use it to check if all cases have been handled correctly and avoid lots of bugs.
+
+
+6. Here is a program, enhance it by using Enums.
+
+View attached screenshots, the repository is https://github.com/ru-engineering/individual-assignment-2-JamesMaloney
+I also fixed a bug which prevented the program from ever resulting in error_val==3 (changed range from Uniform::new(0, 3) to Uniform::new(0, 4)).
+
+
+7. Find forums where you could get quick help with Rust code problems
+
+Here are some forums that helped me getting started with Rust:
+- https://users.rust-lang.org/
+- https://www.reddit.com/r/rust/
+- https://stackoverflow.com/questions/tagged/rust
+
+8. Using lldb (proof in Debugger Info screenshot), I inserted a breakpoint at LINE 6 (first screenshot), then stepped over once to make error_val value appear in left column (last screenshot).

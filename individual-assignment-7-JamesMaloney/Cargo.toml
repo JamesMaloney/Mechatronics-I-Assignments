@@ -1,0 +1,16 @@
+[package]
+authors = ["Giacomo Menchi <giacomom20@ru.is>"]
+description = "A gps data reader for Adafruit Ultimate GPS"
+documentation = "https://docs.rs/mech1-gpsreader/"
+edition = "2018"
+license = "MIT OR Apache-2.0"
+name = "mech1-gpsreader"
+repository = "https://github.com/ru-engineering/individual-assignment-7-JamesMaloney"
+version = "0.4.0"
+
+[lib]
+name = "mech1_gpsreader"
+path = "src/datagps.rs"
+
+[dependencies]
+rpi_embedded = "0.1.0"

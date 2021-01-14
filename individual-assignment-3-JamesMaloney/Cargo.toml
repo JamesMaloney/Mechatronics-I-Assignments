@@ -1,0 +1,10 @@
+[package]
+name = "stoplight_ia3"
+version = "0.1.0"
+authors = ["Giacomo Menchi <giacomom20@ru.is>"]  #CHANGE USER TO YOU
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rust_gpiozero = "0.2.0"
