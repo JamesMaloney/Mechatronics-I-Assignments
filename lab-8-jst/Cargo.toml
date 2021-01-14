@@ -1,0 +1,15 @@
+[package]
+name = "rust_template"
+version = "0.1.0"
+authors = ["Matteo Guerrini, Giacomo Menchi, William Paciaroni"]  #CHANGE USER TO YOU
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+adafruit_io_http = "0.1.1"
+openssl = { version = "0.10", features = ["vendored"] }
+rpi_embedded = "0.1.0"
+reqwest = "0.10.8"
+tokio = { version = "0.2", features = ["full"] }
+json = "0.12.4"

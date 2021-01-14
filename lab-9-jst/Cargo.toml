@@ -1,0 +1,15 @@
+[package]
+name = "lab9"
+version = "0.1.0"
+authors = ["Matteo Guerrini <matteo.guerrini@studenti.unicam.it>, Giacomo Menchi <giacomom20@ru.is>, William Paciaroni <william.paciaroni@studenti.unicam.it>"]  #CHANGE USER TO YOU
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+openssl = {version = "0.10", features = ["vendored"]}
+rpi_embedded = "0.1.0"
+rust_gpiozero = "0.2.0"
+reqwest = "0.10.8"
+tokio = {version = "0.3.0", features = ["full"]}
+json = "0.12.4"

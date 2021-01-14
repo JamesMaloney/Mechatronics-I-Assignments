@@ -1,0 +1,15 @@
+[package]
+name = "datagps"
+version = "0.1.0"
+authors = ["Giacomo Menchi <giacomom20@ru.is>, Matteo Guerrini <matteo.guerrini@studenti.unicam.it>, William Paciaroni <william.paciaroni@studenti.unicam.it>"]
+edition = "2018"
+description = "Adafruit Ultimate GPS: read data like longitude and latitude about the GPS module"
+license = "MIT OR Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.19"
+rpi_embedded = "0.1.0"
+nmea = "0.0.9"
+rust_gpiozero = "0.2.0"

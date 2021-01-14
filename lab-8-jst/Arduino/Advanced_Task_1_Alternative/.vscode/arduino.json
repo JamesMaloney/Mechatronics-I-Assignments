@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "/dev/cu.usbserial-1440",
+    "programmer": "AVR ISP",
+    "sketch": "LAB08_AT2.ino"
+}
